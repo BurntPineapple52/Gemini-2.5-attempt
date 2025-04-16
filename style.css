@@ -1,0 +1,68 @@
+body {
+    font-family: 'Courier New', Courier, monospace;
+    background-color: #111;
+    color: #0f0;
+    margin: 20px;
+    display: flex;
+    flex-direction: column;
+    height: calc(100vh - 40px); /* Full height minus margin */
+}
+
+h1 {
+    color: #f00;
+    text-align: center;
+    font-size: 1.5em;
+    border-bottom: 1px solid #f00;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+#game-output {
+    flex-grow: 1; /* Takes up available space */
+    border: 1px solid #0f0;
+    padding: 15px;
+    margin-bottom: 15px;
+    overflow-y: auto; /* Add scrollbar if content overflows */
+    background-color: #000;
+    white-space: pre-wrap; /* Preserve line breaks */
+}
+
+#game-output p {
+    margin: 0 0 10px 0; /* Spacing between paragraphs */
+    line-height: 1.4;
+}
+
+#input-area {
+    display: flex;
+}
+
+#player-input {
+    flex-grow: 1;
+    padding: 10px;
+    background-color: #222;
+    color: #0f0;
+    border: 1px solid #0f0;
+    font-family: inherit;
+    font-size: 1em;
+    margin-right: 10px;
+}
+
+#submit-button {
+    padding: 10px 15px;
+    background-color: #f00;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 1em;
+}
+
+#submit-button:hover {
+    background-color: #d00;
+}
+
+/* Style for player input echo */
+.player-command {
+    color: #aaa;
+    font-style: italic;
+}
