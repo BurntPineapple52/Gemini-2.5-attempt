@@ -5,20 +5,38 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Procedural Vulgar Text Adventure</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="data:,">
 </head>
 <body>
-    <h1>The Probably Offensive Adventure of the {Generated Title}</h1>
+    <div class="game-container">
+        <h1>The Probably Offensive Adventure of the {Generated Title}</h1>
 
-    <div id="game-output">
-        <!-- Game text will appear here -->
-        <p>Loading your uniquely disturbing adventure...</p>
+        <div class="game-ui">
+            <div id="mini-map-container" class="mini-map-wrapper"></div>
+            
+            <div id="game-output">
+                <!-- Game text will appear here -->
+                <p>Loading your uniquely disturbing adventure...</p>
+            </div>
+            <div id="room-items" class="item-container"></div>
+
+            <div id="command-bar" class="command-interface">
+                <div class="movement-buttons">
+                    <button class="command-btn" data-action="north">North</button>
+                    <button class="command-btn" data-action="south">South</button>
+                    <button class="command-btn" data-action="east">East</button>
+                    <button class="command-btn" data-action="west">West</button>
+                </div>
+                <div class="action-buttons">
+                    <button class="command-btn" data-action="look">Look</button>
+                    <button class="command-btn" data-action="inventory">Inventory</button>
+                    <button class="command-btn" data-action="take">Take</button>
+                    <button class="command-btn" data-action="use">Use</button>
+                </div>
+            </div>
+        </div>
     </div>
 
-    <div id="input-area">
-        <input type="text" id="player-input" placeholder="What do you do? (e.g., 'go north', 'take item')">
-        <button id="submit-button">Enter</button>
-    </div>
-
-    <script src="script.js"></script>
+    <script type="module" src="script.js"></script>
 </body>
 </html>

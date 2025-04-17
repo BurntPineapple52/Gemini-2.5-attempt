@@ -3,9 +3,89 @@ body {
     background-color: #111;
     color: #0f0;
     margin: 20px;
+    height: calc(100vh - 40px); /* Full height minus margin */
+}
+
+.game-container {
     display: flex;
     flex-direction: column;
-    height: calc(100vh - 40px); /* Full height minus margin */
+    height: 100%;
+}
+
+.game-ui {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    gap: 15px;
+}
+
+.mini-map-wrapper {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    width: 200px;
+    height: 200px;
+    border: 1px solid #0f0;
+    background-color: #000;
+    padding: 10px;
+    z-index: 100;
+}
+
+.mini-map {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 5px;
+    width: 100%;
+    height: 100%;
+}
+
+.mini-map-room {
+    border: 1px solid #0f0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.8em;
+    background-color: #111;
+}
+
+.mini-map-room.current-room {
+    background-color: #0f0;
+    color: #000;
+    font-weight: bold;
+}
+
+.command-interface {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 10px;
+    border: 1px solid #0f0;
+    background-color: #000;
+}
+
+.movement-buttons, .action-buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 8px;
+}
+
+.command-btn {
+    padding: 8px 12px;
+    background-color: #222;
+    color: #0f0;
+    border: 1px solid #0f0;
+    font-family: inherit;
+    cursor: pointer;
+    text-align: center;
+}
+
+.command-btn:hover {
+    background-color: #333;
+}
+
+.command-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
 }
 
 h1 {
@@ -18,13 +98,13 @@ h1 {
 }
 
 #game-output {
-    flex-grow: 1; /* Takes up available space */
+    flex-grow: 1;
     border: 1px solid #0f0;
     padding: 15px;
-    margin-bottom: 15px;
-    overflow-y: auto; /* Add scrollbar if content overflows */
+    overflow-y: auto;
     background-color: #000;
-    white-space: pre-wrap; /* Preserve line breaks */
+    white-space: pre-wrap;
+    margin-right: 220px; /* Account for mini-map */
 }
 
 #game-output p {
@@ -32,37 +112,31 @@ h1 {
     line-height: 1.4;
 }
 
-#input-area {
-    display: flex;
-}
-
-#player-input {
-    flex-grow: 1;
-    padding: 10px;
-    background-color: #222;
-    color: #0f0;
-    border: 1px solid #0f0;
-    font-family: inherit;
-    font-size: 1em;
-    margin-right: 10px;
-}
-
-#submit-button {
-    padding: 10px 15px;
-    background-color: #f00;
-    color: #fff;
-    border: none;
-    cursor: pointer;
-    font-family: inherit;
-    font-size: 1em;
-}
-
-#submit-button:hover {
-    background-color: #d00;
-}
-
 /* Style for player input echo */
 .player-command {
     color: #aaa;
     font-style: italic;
+}
+
+/* Item container and buttons */
+.item-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 10px;
+    margin-right: 220px; /* Account for mini-map */
+}
+
+.item-button {
+    padding: 6px 10px;
+    background-color: #222;
+    color: #0f0;
+    border: 1px solid #0f0;
+    font-family: inherit;
+    cursor: pointer;
+    font-size: 0.9em;
+}
+
+.item-button:hover {
+    background-color: #333;
 }
